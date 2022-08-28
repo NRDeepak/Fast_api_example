@@ -1,5 +1,6 @@
 # Fast_api_example
-This repo is an example for fast API.
+This repo is an example for fast API. <br>
+More about <a href="https://fastapi.tiangolo.com/">FastAPI</a>
 
 Install all packages using:
 
