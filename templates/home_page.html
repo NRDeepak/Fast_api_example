@@ -1,0 +1,51 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>English to Kannada</title>
+</head>
+
+<body>
+  <form id="uploadform" action="/english_text" method="post">
+      <h1>English To Kannada Translation using Google Translate(Python Package) and FastAPI</h1>
+      <br>
+      <h2>Enter English Text here:</h2>
+      <br>
+      <input type="text" id="value" name="value" size="50">
+    <br>
+      <br>
+      <br>
+    <input type="submit" id="submit">
+      <br>
+      <br>
+      <br>
+ </form>
+    <h3>Result:</h3>
+   <br>
+  <textarea id="box" cols="50" rows="10"></textarea>
+
+  <script>
+    const box = document.getElementById("box");
+    // const box1 = document.getElementById("value")
+
+    uploadform.onsubmit = async (e) => {
+      e.preventDefault();
+
+      let res = await fetch("/english_text", {
+        method: "POST",
+        body: new FormData(uploadform),
+      });
+
+      if (res.ok) {
+        let result = await res.text();
+
+        box.innerHTML = result;
+      } else {
+        box.innerHTML = `Response error: ${res.status}`;
+      };
+    };
+  </script>
+</body>
+</html>
