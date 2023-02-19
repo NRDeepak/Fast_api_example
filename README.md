@@ -19,9 +19,8 @@ git clone https://github.com/NRDeepak/Fast_api_example.git
 ### Install dependencies
 
 ```
-pip3 install "fastapi[all]"
+pip3 intall -r requirements.txt
 
-pip3 install googletrans==3.1.0a0
 ```
 
 ### Run server
